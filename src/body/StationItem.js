@@ -15,21 +15,21 @@ export class StationItem extends Component {
   toggleDiv = () => {
     const { show } = this.state;
     this.setState({ show: !show });
+    if (this.props.currentStation != "") this.props.setCurrent("");
   };
 
-  helou = value => {
-    this.props.smth(value);
+  clicked = value => {
+    this.props.setCurrent(value);
     this.toggleDiv();
   };
 
   render() {
     const { title, frequency } = this.props.station;
-    const { currentStation, smth } = this.props;
     return (
       <div id="rowContainer">
         <div
           id="title"
-          onClick={() => this.helou(title)}
+          onClick={() => this.clicked(title)}
           onMouseEnter={() => {
             document.body.style.cursor = "pointer";
           }}
@@ -42,7 +42,7 @@ export class StationItem extends Component {
         </div>
         <span
           id="frequency"
-          onClick={() => this.helou(title)}
+          onClick={() => this.clicked(title)}
           onMouseEnter={() => {
             document.body.style.cursor = "pointer";
           }}
@@ -56,11 +56,6 @@ export class StationItem extends Component {
     );
   }
 }
-
-// PropTypes
-// StationItem.propTypes = {
-//   station: PropTypes.object.isRequired
-// };
 
 export default StationItem;
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from "./header/Header";
-import PropTypes from "prop-types";
 import Stations from "./body/Stations";
 import "./App.css";
 
@@ -35,17 +34,15 @@ class App extends Component {
           frequency: "142,2"
         }
       ],
-      currentStation: "heyyy"
+      currentStation: ""
     };
-    this.smth = this.smth.bind(this);
+    this.setCurrent = this.setCurrent.bind(this);
   }
 
-  smth = value => {
+  setCurrent = value => {
     this.setState({
-      ...this.state,
       currentStation: value
     });
-    console.log(this.state.currentStation);
   };
 
   render() {
@@ -59,7 +56,7 @@ class App extends Component {
               <Stations
                 stations={this.state.stations}
                 currentStation={currentStation}
-                smth={this.smth}
+                setCurrent={this.setCurrent}
               />
             </React.Fragment>
             <p id="footer">Now playing: {currentStation}</p>
