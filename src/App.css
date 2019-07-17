@@ -8,6 +8,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
   color: "#a3acbe";
+  
 }
 
 .container {
@@ -24,6 +25,7 @@ body {
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   background: #2a2a35;
   border-radius: 25px;
+  
 }
 
 #App{

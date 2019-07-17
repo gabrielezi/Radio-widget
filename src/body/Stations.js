@@ -4,15 +4,17 @@ import PropTypes from "prop-types";
 
 class Stations extends Component {
   render() {
-    return this.props.stations.map(station => (
-      <StationItem key={station.id} station={station} />
+    const { stations, currentStation, smth } = this.props;
+
+    return stations.map(station => (
+      <StationItem
+        key={station.id}
+        station={station}
+        currentStation={currentStation}
+        smth={this.props.smth}
+      />
     ));
   }
 }
-
-// PropTypes
-Stations.propTypes = {
-  stations: PropTypes.array.isRequired
-};
 
 export default Stations;
