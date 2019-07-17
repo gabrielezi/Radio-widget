@@ -9,3 +9,20 @@
     -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 }
+
+.image{
+    background: #eeae61;
+    margin-top: 5px;
+}
+
+#switch{
+    float: right;
+    width: 30px;
+    height: 35px;
+}
+
+#backArrow{
+    float: left;
+    width: 20px;
+    height: 30px;
+}

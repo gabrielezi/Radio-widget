@@ -8,24 +8,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
   color: "#a3acbe";
-  
 }
 
 .container {
   margin-top: 3%;
   padding: 0 1rem;
-  /*border: 1px solid black;
-  border-radius: 25px; */
   background: "#2a2a35";
 }
 
 .body_sec {
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
   background: #2a2a35;
   border-radius: 25px;
-  
 }
 
 #App{
@@ -33,9 +29,16 @@ body {
   box-sizing: content-box;
 }
 #footer{
+  color: #eeae61;
+  font-size: 15px;
+  padding-top: 3%;
+}
+#currentStation{
+  padding-bottom: 3%;
   color: #a3acbe;
+  font-size: 25px;
+}
+.footerContainer{
   background: #2a2a35;
   text-align: center;
-  padding-bottom: 3%;
-  font-size: 20px;
 }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import circle from "./circle.png";
 import minus from "./minus.png";
 import plus from "./plus.png";
@@ -15,7 +14,7 @@ export class StationItem extends Component {
   toggleDiv = () => {
     const { show } = this.state;
     this.setState({ show: !show });
-    if (this.props.currentStation != "") this.props.setCurrent("");
+    //  if (this.props.currentStation != "") this.props.setCurrent("");
   };
 
   clicked = value => {

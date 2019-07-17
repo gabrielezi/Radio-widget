@@ -8,27 +8,10 @@ function Header() {
     <h1 id="header">
       {" "}
       STATIONS
-      <img
-        src={Switch}
-        style={imageStyle}
-        align="right"
-        width="25"
-        height="30"
-      />
-      <img
-        src={BackArrow}
-        style={imageStyle}
-        align="left"
-        width="20"
-        height="30"
-      />
+      <img className="image" src={Switch} id="switch" />
+      <img className="image" src={BackArrow} id="backArrow" />
     </h1>
   );
 }
-
-const imageStyle = {
-  background: "#eeae61",
-  marginTop: "5px"
-};
 
 export default Header;

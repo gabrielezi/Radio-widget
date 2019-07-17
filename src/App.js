@@ -34,14 +34,16 @@ class App extends Component {
           frequency: "142,2"
         }
       ],
-      currentStation: ""
+      currentStation: "",
+      show: false
     };
     this.setCurrent = this.setCurrent.bind(this);
   }
 
   setCurrent = value => {
     this.setState({
-      currentStation: value
+      currentStation: value,
+      show: true
     });
   };
 
@@ -59,8 +61,12 @@ class App extends Component {
                 setCurrent={this.setCurrent}
               />
             </React.Fragment>
-            <p id="footer">Now playing: {currentStation}</p>
-            <div />
+            <div id="footer" className="footerContainer">
+              {this.state.show && "CURRENTLY PLAYING"}
+            </div>
+            <div id="currentStation" className="footerContainer">
+              {this.state.show && currentStation}
+            </div>
           </div>
         </div>
       </div>
