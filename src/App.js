@@ -11,49 +11,55 @@ class App extends Component {
         {
           id: 1,
           title: "Putin FM",
-          frequency: "66,6"
+          frequency: "66,6",
+          show: false
         },
         {
           id: 2,
           title: "Dribbble FM",
-          frequency: "101,2"
+          frequency: "101,2",
+          show: false
         },
         {
           id: 3,
           title: "Doge FM",
-          frequency: "99,4"
+          frequency: "99,4",
+          show: false
         },
         {
           id: 4,
           title: "Ballads FM",
-          frequency: "87,1"
+          frequency: "87,1",
+          show: false
         },
         {
           id: 5,
           title: "Maximum FM",
-          frequency: "142,2"
+          frequency: "142,2",
+          show: false
         }
       ],
-      currentStation: "",
-      show: false
+      currentStation: ""
     };
     this.setCurrent = this.setCurrent.bind(this);
   }
 
   setCurrent = value => {
+    const { show } = this.state;
     this.setState({
       currentStation: value,
-      show: true
+      show: !show
     });
   };
 
   render() {
     const { currentStation } = this.state;
+    console.log(this.state.show);
     return (
       <div className="App">
         <div className="container">
           <Header />
-          <div class="body_sec">
+          <div className="body_sec">
             <React.Fragment>
               <Stations
                 stations={this.state.stations}

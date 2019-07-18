@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import StationItem from "./StationItem";
-import PropTypes from "prop-types";
 
 class Stations extends Component {
   render() {

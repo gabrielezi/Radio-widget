@@ -8,8 +8,8 @@ function Header() {
     <h1 id="header">
       {" "}
       STATIONS
-      <img className="image" src={Switch} id="switch" />
-      <img className="image" src={BackArrow} id="backArrow" />
+      <img className="image" src={Switch} id="switch" alt="switch" />
+      <img className="image" src={BackArrow} id="backArrow" alt="back arrow" />
     </h1>
   );
 }

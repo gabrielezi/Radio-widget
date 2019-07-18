@@ -14,7 +14,6 @@ export class StationItem extends Component {
   toggleDiv = () => {
     const { show } = this.state;
     this.setState({ show: !show });
-    //  if (this.props.currentStation != "") this.props.setCurrent("");
   };
 
   clicked = value => {
@@ -63,15 +62,15 @@ class Box extends Component {
     return (
       <div id="container">
         <div id="minus">
-          <img src={minus} id="minusImg" />
+          <img src={minus} id="minusImg" alt="minus" />
         </div>
 
         <div id="circle">
-          <img src={circle} id="circleImg" />
+          <img src={circle} id="circleImg" alt="circle" />
         </div>
 
         <div id="plus">
-          <img src={plus} id="plusImg" />
+          <img src={plus} id="plusImg" alt="plus" />
         </div>
       </div>
     );
