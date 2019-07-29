@@ -11,50 +11,84 @@ class App extends Component {
         {
           id: 1,
           title: "Putin FM",
-          frequency: "66,6",
-          show: false
+          frequency: "66,6"
         },
         {
           id: 2,
           title: "Dribbble FM",
-          frequency: "101,2",
-          show: false
+          frequency: "101,2"
         },
         {
           id: 3,
           title: "Doge FM",
-          frequency: "99,4",
-          show: false
+          frequency: "99,4"
         },
         {
           id: 4,
           title: "Ballads FM",
-          frequency: "87,1",
-          show: false
+          frequency: "87,1"
         },
         {
           id: 5,
           title: "Maximum FM",
-          frequency: "142,2",
-          show: false
+          frequency: "142,2"
         }
       ],
-      currentStation: ""
+      currentStation: "",
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false
     };
     this.setCurrent = this.setCurrent.bind(this);
   }
 
   setCurrent = value => {
-    const { show } = this.state;
+    const { show1, show2, show3, show4, show5 } = this.state;
+    this.dontShow();
     this.setState({
-      currentStation: value,
-      show: !show
+      currentStation: value
+    });
+    if (value === "Putin FM") {
+      this.setState({
+        show1: !show1
+      });
+    }
+    if (value === "Dribbble FM") {
+      this.setState({
+        show2: !show2
+      });
+    }
+    if (value === "Doge FM") {
+      this.setState({
+        show3: !show3
+      });
+    }
+    if (value === "Ballads FM") {
+      this.setState({
+        show4: !show4
+      });
+    }
+    if (value === "Maximum FM") {
+      this.setState({
+        show5: !show5
+      });
+    }
+  };
+
+  dontShow = () => {
+    this.setState({
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false
     });
   };
 
   render() {
-    const { currentStation } = this.state;
-    console.log(this.state.show);
+    const { currentStation, show1, show2, show3, show4, show5 } = this.state;
     return (
       <div className="App">
         <div className="container">
@@ -65,13 +99,19 @@ class App extends Component {
                 stations={this.state.stations}
                 currentStation={currentStation}
                 setCurrent={this.setCurrent}
+                show1={show1}
+                show2={show2}
+                show3={show3}
+                show4={show4}
+                show5={show5}
               />
             </React.Fragment>
             <div id="footer" className="footerContainer">
-              {this.state.show && "CURRENTLY PLAYING"}
+              {(show1 || show2 || show3 || show4 || show5) &&
+                "CURRENTLY PLAYING"}
             </div>
             <div id="currentStation" className="footerContainer">
-              {this.state.show && currentStation}
+              {(show1 || show2 || show3 || show4 || show5) && currentStation}
             </div>
           </div>
         </div>

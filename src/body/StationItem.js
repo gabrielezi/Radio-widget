@@ -7,20 +7,30 @@ import "./itemStyle.css";
 export class StationItem extends Component {
   constructor(props) {
     super(props);
-    this.state = { show: false };
-    this.toggleDiv = this.toggleDiv.bind(this);
   }
-
-  toggleDiv = () => {
-    const { show } = this.state;
-    this.setState({ show: !show });
-  };
 
   clicked = value => {
     this.props.setCurrent(value);
-    this.toggleDiv();
   };
 
+  isShown = title => {
+    const { show1, show2, show3, show4, show5 } = this.props;
+    if (title === "Putin FM") {
+      return show1;
+    }
+    if (title === "Dribbble FM") {
+      return show2;
+    }
+    if (title === "Doge FM") {
+      return show3;
+    }
+    if (title === "Ballads FM") {
+      return show4;
+    }
+    if (title === "Maximum FM") {
+      return show5;
+    }
+  };
   render() {
     const { title, frequency } = this.props.station;
     return (
@@ -36,7 +46,7 @@ export class StationItem extends Component {
           }}
         >
           {title}
-          {this.state.show && <Box />}
+          {this.isShown(title) && <Box />}
         </div>
         <span
           id="frequency"
